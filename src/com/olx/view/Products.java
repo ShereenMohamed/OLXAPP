@@ -47,11 +47,12 @@ public class Products extends JFrame {
 			
 			table = new JTable();
 			table.setModel(new DefaultTableModel(
-				new Object[][] {
+				new Object[][][] {
 				},
 				new String[] {
 						"Product ID",
-					"Product Name"
+					"Product Name",
+					"Product Price"
 				}
 			));
 	
@@ -59,9 +60,10 @@ public class Products extends JFrame {
 		     Vector row = null;
 		     table.setCellSelectionEnabled(true);
 		     for(Product product : products){
-		    	 row = new Vector(2);
+		    	 row = new Vector(3);
 		    	 row.add(product.getId());
 		         row.add(product.getName());
+		         row.add(product.getPrice());
 		         ((DefaultTableModel)table.getModel()).addRow(row);
 		     }
 				table.setCellSelectionEnabled(true);
